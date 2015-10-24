@@ -8,3 +8,6 @@ django-model-utils
 psycopg2
 
 #Cumsom requirements for this project
+djangorestframework
+markdown
+django-filter

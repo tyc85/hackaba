@@ -37,9 +37,9 @@ Set Django settings file before bootstraping::
 Add custom environment variables to your postactivate script
 --------------------------
 
-Edit your virtualenvs/bin/postactivate::
+Edit your virtualenvs/hackaba/bin/postactivate::
 
-    export DJANGO_SETTINGS_MODULE=project_name.settings.dev
+    export DJANGO_SETTINGS_MODULE=hackaba.settings.dev
     
     
 Install Python packages, Enter the 'requirements' folder::
@@ -51,7 +51,7 @@ Setup the postgresql database
 
 After Setting up settings/dev.py::
 
-    sudo su - postgres
-    createuser -P
-    createdb --owner user dbname
-    logout
+    sudo -u postgres psql
+    create USER hackaba with password 'hackaba';
+    create DATABASE hackaba with owner hackaba;
+

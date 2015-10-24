@@ -1,0 +1,96 @@
+{% extends "semantic-base.html" %}
+{% load staticfiles %}
+
+{% block title %}
+{{ block.super }} - {{ product.title}}
+{% endblock title%}
+
+{% block template_css %}
+
+  <style>
+
+
+  </style>
+{% endblock template_css %}
+
+{% block template_js %}
+  
+
+<script src="{% static 'semantic/dist/components/popup.min.js' %}"></script>
+<script src="{% static 'semantic/dist/components/transition.min.js' %}"></script>
+
+<script>
+$( document ).ready(function() {
+    $('.ui.checkbox').checkbox('enable');
+    $('.ui.rating').rating();
+});
+</script>
+
+
+{% endblock template_js %}
+
+{% block content %}
+
+
+
+<!--
+<div class="ui stackable one column grid container">
+  <div class="column">
+    <div class="ui section divider" id="footer"></div>
+    <h3 class="ui header">{% trans "Five value propositions of this product:" %}</h3>
+  </div>
+</div>
+
+<div class="ui three column stackable grid container">
+  {% for feature in features %}
+    {% if forloop.first %}
+      <div class="sixteen wide column" class="first-feature">
+        <p style="color:gray;font-size:25px;">{% trans "First," %} {{ feature.title }}</p>
+      </div> 
+    {% else %}
+      <div class="four wide column">
+        <img class="ui tiny image" src="{{ MEDIA_URL }}/icon/fe0{{ forloop.counter }}.png" alt="...">
+        <h3>{{ feature.title }}</h3>
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>-->
+
+
+
+<div class="ui stackable one column centered grid container" style="padding-top:20px;">
+  <div class="sixteen wide tablet thirteen wide computer column">
+    <div class="ui divided selection list">
+      <a class="item">
+        <div class="ui red horizontal label">Question</div>
+        <h1>What's the job of mom?</h1>
+      </a>
+    </div>
+
+    <form class="ui form">
+      <div class="field">
+        <div class="ui toggle checkbox">
+          <input type="checkbox" name="gift" tabindex="0" class="hidden">
+          <label>Does he need prompting?</label>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="ui toggle checkbox">
+          <input type="checkbox" name="gift" tabindex="0" class="hidden">
+          <label>Does the client pass the test?</label>
+        </div>
+      </div>
+      <!--
+      <div class="field">
+        <label>What level of prompting does the client need?</label>
+        <div class="ui massive star rating" data-rating="0"></div>
+      </div> 
+      -->
+
+      <button class="ui button" type="submit">Submit</button>
+    </form>
+  </div>
+</div>
+
+{% endblock content %}
