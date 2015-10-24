@@ -1,0 +1,10 @@
+#Forms
+django-braces
+
+#Models
+django-model-utils
+
+#For the persistance stores
+psycopg2
+
+#Cumsom requirements for this project
